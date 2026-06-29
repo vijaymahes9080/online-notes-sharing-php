@@ -1,75 +1,182 @@
+<div align="center">
+
+![Hero Banner](images/hero_banner.png)
+
 # 📚 Online Notes Sharing Platform
 
-![Online Notes Sharing Banner](images/banner.png)
+> **A powerful, secure and multi-role notes management system built with Core PHP & MySQLi**
 
-A modern, secure, and user-friendly notes management system developed in Core PHP and MySQLi. This platform enables students, teachers, and administrators to upload, manage, download, and share study materials seamlessly.
+[![GitHub](https://img.shields.io/badge/GitHub-vijaymahes9080-181717?style=for-the-badge&logo=github)](https://github.com/vijaymahes9080)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-28a745?style=for-the-badge&logo=github-pages)](https://vijaymahes9080.github.io/online-notes-sharing-php/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge)](LICENSE)
+[![PHP](https://img.shields.io/badge/PHP-5.3%2B-777BB4?style=for-the-badge&logo=php)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql)](https://www.mysql.com/)
+
+</div>
 
 ---
 
-## 🎨 Visual Preview
+## 🖥️ Live Screenshots
 
-Here is a look at the web interface of the system:
+<table>
+  <tr>
+    <td align="center"><b>🏠 Homepage</b></td>
+    <td align="center"><b>📊 Admin Dashboard</b></td>
+  </tr>
+  <tr>
+    <td><img src="images/homepage_screenshot.png" alt="Homepage" width="100%"/></td>
+    <td><img src="images/dashboard_screenshot.png" alt="Dashboard" width="100%"/></td>
+  </tr>
+</table>
 
-| 🏠 Homepage | 📊 Admin Dashboard |
-| :---: | :---: |
-| ![Homepage Preview](images/homepage_screenshot.png) | ![Dashboard Preview](images/dashboard_screenshot.png) |
+---
+
+## 👥 User Roles
+
+![User Roles](images/roles.png)
+
+This platform supports **three distinct user roles**, each with its own set of capabilities:
+
+| Role | Description |
+|------|-------------|
+| 👑 **Admin** | Full system control — manage users, approve/reject notes, delete content |
+| 🎓 **Teacher** | Upload course notes, manage personal uploads, update profile |
+| 📖 **Student** | Browse & download approved notes from their course department |
 
 ---
 
 ## ✨ Features
 
-- **👥 Multi-User Access Control**: Supports distinct accounts and capabilities for Admins, Teachers, and Students.
-- **🛠️ Powerful Admin Panel**: Direct management of note uploads, user accounts, statuses, and logs.
-- **📁 Document CRUD & Uploads**: Supports multiple file types including `.pdf`, `.ppt`, `.doc`, `.docx`, `.txt`, and `.zip` up to 30MB.
-- **🔐 Secure Authentication**: Features hashed passwords (`password_hash`), query sanitizations (`mysqli_real_escape_string`), and token-based password recovery.
-- **📄 Profile Customization**: Users can easily update their account information, upload bio, and change profile images.
+![Features Overview](images/features.png)
+
+- 🔐 **Secure Registration & Login** — Password hashing with `password_hash()` and safe query binding
+- 📁 **Multi-format File Upload** — Supports `.pdf`, `.ppt`, `.doc`, `.docx`, `.txt`, `.zip` (up to 30MB)
+- 🛡️ **Admin Approval System** — Notes go live only after admin review and approval
+- 👤 **Full Profile Management** — Bio, profile photo upload, email, and password updates
+- 📧 **Password Recovery via Email** — Token-based reset using PHPMailer + Gmail SMTP
+- 🗂️ **Course-based Filtering** — Notes filtered by department (CS, Electrical, Mechanical)
+- 📊 **Rich Admin Panel** — View, approve, or delete any upload or user account
+
+---
+
+## 🔄 How It Works
+
+![User Workflow](images/workflow.png)
+
+1. **Register** — Create an account as a Teacher or Student
+2. **Login** — Authenticate and access your personal dashboard
+3. **Upload** — Upload your course notes with title, description, and file
+4. **Admin Reviews** — Admin approves or rejects the submission
+5. **Download** — Approved students and teachers can download the note
 
 ---
 
 ## 🛠️ Technology Stack
 
-- **Backend**: Core PHP (v5.3+)
-- **Database**: MySQL / MySQLi
-- **Frontend**: HTML5, CSS3, JavaScript (jQuery, Bootstrap, FlexSlider)
-- **Email Service**: PHPMailer (with Gmail SMTP configuration)
+![Tech Stack](images/tech_stack.png)
+
+| Layer | Technology |
+|-------|------------|
+| **Backend** | Core PHP 5.3+ |
+| **Database** | MySQL / MySQLi |
+| **Frontend** | HTML5, CSS3, Bootstrap |
+| **JavaScript** | jQuery, FlexSlider |
+| **Email Service** | PHPMailer (Gmail SMTP) |
+| **Validation** | GUMP PHP Validation Library |
 
 ---
 
 ## 🚀 Installation & Setup
 
-1. **Clone/Copy Project**: Move the repository files to your server directory (e.g. `/var/www/html/online-notes-sharing` or your XAMPP/WAMP `htdocs` folder).
-2. **Database Import**:
-   - Open phpMyAdmin.
-   - Create a database named `notes`.
-   - Import the database dump file [notes.sql](file:///d:/BACKUP/projects/PHP%20project/online-notes-sharing/db/notes.sql).
-3. **Database Configuration**:
-   - Open [connection.php](file:///d:/BACKUP/projects/PHP%20project/online-notes-sharing/includes/connection.php) and update the settings to connect to your database.
-4. **Launch Application**:
-   - Open your browser and navigate to `http://localhost/online-notes-sharing`.
+```bash
+# 1. Clone this repository
+git clone https://github.com/vijaymahes9080/online-notes-sharing-php.git
+
+# 2. Move to your server's web root
+#    e.g. C:/xampp/htdocs/online-notes-sharing
+
+# 3. Import the database
+#    Open phpMyAdmin → Create DB "notes" → Import db/notes.sql
+
+# 4. Configure database connection
+#    Edit includes/connection.php
+```
+
+```php
+// includes/connection.php
+$conn = mysqli_connect("localhost", "root", "", "notes")
+        or die("error" . mysqli_error($conn));
+```
+
+```bash
+# 5. Open in browser
+http://localhost/online-notes-sharing
+```
 
 ---
 
 ## 🔑 Default Login Credentials
 
-For testing and demonstration, you can use the default accounts:
-
-* **Admin Account**:
-  - **Username**: `root`
-  - **Password**: `adminroot`
-* **Student/Teacher Account**:
-  - **Username**: `user`
-  - **Password**: `userpass`
+| Role | Username | Password |
+|------|----------|----------|
+| 👑 Admin | `root` | `adminroot` |
+| 📖 User | `user` | `userpass` |
 
 ---
 
-## 📝 Roadmap & To-Do List
+## 📂 Project Structure
 
-- [ ] Add note search optimization.
-- [ ] Implement pagination for note tables.
-- [ ] Add social authentication (Google/Facebook login).
+```
+online-notes-sharing/
+├── 📁 css/               # Stylesheets (Bootstrap, custom)
+├── 📁 js/                # JavaScript files (jQuery, FlexSlider)
+├── 📁 images/            # Slider & README images
+├── 📁 fonts/             # Material icons & Roboto fonts
+├── 📁 includes/          # PHP includes (header, footer, navbar, DB)
+├── 📁 dashboard/         # Admin/User dashboard panel
+│   ├── 📁 includes/      # Dashboard header, nav, connection
+│   ├── 📄 index.php      # Dashboard home (notes list)
+│   ├── 📄 notes.php      # User's personal notes
+│   ├── 📄 uploadnote.php # Upload new note
+│   ├── 📄 users.php      # Admin: manage all users
+│   ├── 📄 userprofile.php# Edit profile
+│   └── 📄 viewprofile.php# View any user's profile
+├── 📁 db/                # Database SQL dump
+├── 📁 PHPMailer/         # Email library
+├── 📄 index.php          # Landing homepage
+├── 📄 login.php          # Login page
+├── 📄 signup.php         # Registration page
+├── 📄 recoverpassword.php# Forgot password
+└── 📄 verifytoken.php    # Token verification & reset
+```
+
+---
+
+## 📝 Roadmap
+
+- [x] Multi-role authentication system
+- [x] File upload and admin approval workflow
+- [x] Profile management with photo upload
+- [x] Password recovery via email
+- [x] Static GitHub Pages prototype
+- [ ] Pagination for note tables
+- [ ] Search notes by keyword
+- [ ] Social login (Google / Facebook)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](file:///d:/BACKUP/projects/PHP%20project/online-notes-sharing/LICENSE). Created & maintained by [Vijay Mahes](https://github.com/vijaymahes9080).
+This project is released under the **MIT License** — see [LICENSE](LICENSE) for details.
+
+---
+
+<div align="center">
+
+Made with ❤️ by **[Vijay Mahes](https://github.com/vijaymahes9080)**
+
+⭐ **Star this repository** if you found it helpful!
+
+[![GitHub stars](https://img.shields.io/github/stars/vijaymahes9080/online-notes-sharing-php?style=social)](https://github.com/vijaymahes9080/online-notes-sharing-php/stargazers)
+
+</div>
