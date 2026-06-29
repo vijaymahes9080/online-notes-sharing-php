@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Dashboard - Vijay Mahes</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/tinymce/tinymce.min.js"></script>
+    <script src="js/tinymce/script.js"></script>
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Online Notes Sharing</a>
+            </div>
+            
+            <ul class="nav navbar-right top-nav">
+                <li><a href="./uploadnote.html">UPLOAD</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Vijay Mahes <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="./userprofile.html"><i class="fa fa-fw fa-user"></i> Account</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="../login.html"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#user-menu"><i class="fa fa-fw fa-users"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="user-menu" class="collapse">
+                            <li>
+                                <a href="./users.html">View All Users</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#notes-menu"><i class="fa fa-fw fa-folder"></i> My Notes <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="notes-menu" class="collapse">
+                            <li>
+                                <a href="./notes.html">View All Notes</a>
+                            </li>
+                            <li>
+                                <a href="./uploadnote.html">Upload Note</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="collapse" data-target="#posts"><i class="fa fa-fw fa-file-text"></i> My Account <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="posts" class="collapse">
+                            <li>
+                                <a href="./viewprofile.html"> View Profile</a>
+                            </li>
+                            <li>
+                                <a href="./userprofile.html">Edit Profile</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Welcome 
+                            <small>Vijay Mahes (Admin)</small>
+                        </h1>
+                        <h3 class="page-header">
+                            <center> <marquee width="70%"><font color="green">Notes uploaded by various users</font></marquee></center>
+                        </h3>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Type</th>
+                                        <th>Uploaded on</th>
+                                        <th>Uploaded by</th>
+                                        <th>Status</th>
+                                        <th>View</th>
+                                        <th>Approve</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="row-57">
+                                        <td>demo previer</td>
+                                        <td>demo</td>
+                                        <td>pdf</td>
+                                        <td>2017-07-19 05:08:23</td>
+                                        <td><a href="viewprofile.html?name=user">user</a></td>
+                                        <td class="status">approved</td>
+                                        <td><a href="#" class="btn btn-xs btn-success" onclick="alert('Viewing file demo...'); return false;">View</a></td>
+                                        <td><a href="#" class="btn btn-xs btn-primary disabled">Approved</a></td>
+                                        <td><a href="#" class="btn btn-xs btn-danger" onclick="deleteRow(57); return false;"><i class="fa fa-times"></i> Delete</a></td>
+                                    </tr>
+                                    <tr id="row-58">
+                                        <td>phpp demo</td>
+                                        <td>ppph demo</td>
+                                        <td>pdf</td>
+                                        <td>2017-07-20 14:52:41</td>
+                                        <td><a href="viewprofile.html?name=anirban">anirban</a></td>
+                                        <td class="status" style="color: brown; font-weight: bold;">not approved yet</td>
+                                        <td><a href="#" class="btn btn-xs btn-success" onclick="alert('Viewing file demo...'); return false;">View</a></td>
+                                        <td><a href="#" class="btn btn-xs btn-info" id="approve-btn-58" onclick="approveRow(58); return false;"><i class="fa fa-check"></i> Approve</a></td>
+                                        <td><a href="#" class="btn btn-xs btn-danger" onclick="deleteRow(58); return false;"><i class="fa fa-times"></i> Delete</a></td>
+                                    </tr>
+                                    <tr id="row-55">
+                                        <td>teacher title</td>
+                                        <td>demo desc</td>
+                                        <td>zip</td>
+                                        <td>2017-07-22 06:02:02</td>
+                                        <td><a href="viewprofile.html?name=teacher">teacher</a></td>
+                                        <td class="status">approved</td>
+                                        <td><a href="#" class="btn btn-xs btn-success" onclick="alert('Viewing file demo...'); return false;">View</a></td>
+                                        <td><a href="#" class="btn btn-xs btn-primary disabled">Approved</a></td>
+                                        <td><a href="#" class="btn btn-xs btn-danger" onclick="deleteRow(55); return false;"><i class="fa fa-times"></i> Delete</a></td>
+                                    </tr>
+                                    <tr id="row-53">
+                                        <td>demo title ..</td>
+                                        <td>demo desc...</td>
+                                        <td>zip</td>
+                                        <td>2017-07-19 04:54:36</td>
+                                        <td><a href="viewprofile.html?name=user2">user2</a></td>
+                                        <td class="status" style="color: brown; font-weight: bold;">not approved yet</td>
+                                        <td><a href="#" class="btn btn-xs btn-success" onclick="alert('Viewing file demo...'); return false;">View</a></td>
+                                        <td><a href="#" class="btn btn-xs btn-info" id="approve-btn-53" onclick="approveRow(53); return false;"><i class="fa fa-check"></i> Approve</a></td>
+                                        <td><a href="#" class="btn btn-xs btn-danger" onclick="deleteRow(53); return false;"><i class="fa fa-times"></i> Delete</a></td>
+                                    </tr>
+                                    <tr id="row-52">
+                                        <td>demo title</td>
+                                        <td>demo desc......</td>
+                                        <td>pdf</td>
+                                        <td>2017-07-22 06:02:22</td>
+                                        <td><a href="viewprofile.html?name=user1">user1</a></td>
+                                        <td class="status">approved</td>
+                                        <td><a href="#" class="btn btn-xs btn-success" onclick="alert('Viewing file demo...'); return false;">View</a></td>
+                                        <td><a href="#" class="btn btn-xs btn-primary disabled">Approved</a></td>
+                                        <td><a href="#" class="btn btn-xs btn-danger" onclick="deleteRow(52); return false;"><i class="fa fa-times"></i> Delete</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        function approveRow(id) {
+            if (confirm('Are you sure you want to approve this note?')) {
+                var row = document.getElementById('row-' + id);
+                var statusCell = row.querySelector('.status');
+                statusCell.textContent = 'approved';
+                statusCell.style.color = 'inherit';
+                statusCell.style.fontWeight = 'normal';
+                
+                var approveBtn = document.getElementById('approve-btn-' + id);
+                approveBtn.className = 'btn btn-xs btn-primary disabled';
+                approveBtn.innerHTML = 'Approved';
+                approveBtn.onclick = null;
+                alert('Note approved successfully!');
+            }
+        }
+        
+        function deleteRow(id) {
+            if (confirm('Are you sure you want to delete this post?')) {
+                var row = document.getElementById('row-' + id);
+                row.parentNode.removeChild(row);
+                alert('Note deleted successfully!');
+            }
+        }
+    </script>
+</body>
+</html>

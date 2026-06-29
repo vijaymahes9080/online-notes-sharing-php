@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up - Online Notes Sharing</title>
+    <script src="dashboard/js/tinymce/tinymce.min.js"></script>
+    <script src="dashboard/js/tinymce/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/cms-home.css">
+    <link rel="stylesheet" type="text/css" href="css/material-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/loginstyle.css">
+    <link href="dashboard/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Online Notes Sharing</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="dashboard/index.html">Upload Notes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+
+    <div class="container">
+        <div class="form">
+            <form id="contactform" onsubmit="event.preventDefault(); alert('SUCCESSFULLY REGISTERED'); window.location.href='login.html';"> 
+                <p class="contact"><label for="name">Name</label></p> 
+                <input id="name" name="name" placeholder="First and last name" required="" tabindex="1" type="text"> 
+               
+                <p class="contact"><label for="email">Email</label></p> 
+                <input id="email" name="email" placeholder="example@domain.com" required="" type="email"> 
+                    
+                <p class="contact"><label for="username">Create a username</label></p> 
+                <input id="username" name="username" placeholder="username" required="" tabindex="2" type="text"> 
+               
+                <p class="contact"><label for="password">Create a password</label></p> 
+                <input type="password" id="password" name="password" required=""> 
+                
+                <p class="contact"><label for="repassword">Confirm your password</label></p> 
+                <input type="password" id="repassword" name="repassword" required=""> 
+            
+                <p class="contact"><label for="gender">Gender </label></p> 
+                <select class="select-style gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select><br><br>
+                
+                <p class="contact"><label for="role">I am a..</label></p> 
+                <select class="select-style gender" name="role">
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                </select><br><br>
+                
+                <p class="contact"><label for="course">I teach/study..</label></p>
+                <select class="select-style gender" name="course">
+                    <option value="Computer Science">Computer Sc Engineering</option>
+                    <option value="Electrical">Electrical Engineering</option>
+                    <option value="Mechanical">Mechanical Engineering</option>
+                </select><br><br>
+                
+                <input class="buttom" name="signup" id="submit" tabindex="5" value="Sign me up!" type="submit">    
+            </form> 
+        </div>      
+    </div>
+
+</body>
+</html>
