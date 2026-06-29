@@ -1,0 +1,27 @@
+# IDE and Editor files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# PHP / Composer files
+/vendor/
+composer.phar
+
+# Log files
+*.log
+
+# Environment/Database config files (if any are created)
+.env
+.env.local
+.env.*.local
