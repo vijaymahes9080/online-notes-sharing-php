@@ -1,63 +1,75 @@
-# Online Notes Sharing
-## A notes management system which helps users to upload, download and manage notes of their particular course. The whole system is coded in core PHP and MySqli.
+# 📚 Online Notes Sharing Platform
 
-Online Notes Sharing ->
+![Online Notes Sharing Banner](images/banner.png)
 
-![home](https://user-images.githubusercontent.com/16975766/28489136-9c9930a0-6ed8-11e7-85a0-af4d73f63cd7.png)
+A modern, secure, and user-friendly notes management system developed in Core PHP and MySQLi. This platform enables students, teachers, and administrators to upload, manage, download, and share study materials seamlessly.
 
-Online Notes Sharing Admin Panel ->
+---
 
-![admin](https://user-images.githubusercontent.com/16975766/28489144-e2c938ae-6ed8-11e7-90f2-f104f34eeabb.png)
+## 🎨 Visual Preview
 
-### Requirements 
+Here is a look at the web interface of the system:
 
-- PHP 5.3 or higher recommended 
-- MySQL DB
-- Ability to write .htaccess file for apache mod_rewrite
+| 🏠 Homepage | 📊 Admin Dashboard |
+| :---: | :---: |
+| ![Homepage Preview](images/homepage_screenshot.png) | ![Dashboard Preview](images/dashboard_screenshot.png) |
 
-### Installation
-- Upload online-notes-sharing to the directory of your choice. (E.g :  /var/www/html/online-notes-sharing )
-- Import MySql Db file to your database software (E.g : PhpMyAdmin -> Create DB -> Import notes.sql  )
-- Configure connection between your database and server by modifying the /includes/connection.php file
-- Navigate to the installation in your browser ( E.g :  http://localhost/online-notes-sharing )
-- Done :)
+---
 
-### Login Details
+## ✨ Features
 
-1. Admin:
+- **👥 Multi-User Access Control**: Supports distinct accounts and capabilities for Admins, Teachers, and Students.
+- **🛠️ Powerful Admin Panel**: Direct management of note uploads, user accounts, statuses, and logs.
+- **📁 Document CRUD & Uploads**: Supports multiple file types including `.pdf`, `.ppt`, `.doc`, `.docx`, `.txt`, and `.zip` up to 30MB.
+- **🔐 Secure Authentication**: Features hashed passwords (`password_hash`), query sanitizations (`mysqli_real_escape_string`), and token-based password recovery.
+- **📄 Profile Customization**: Users can easily update their account information, upload bio, and change profile images.
 
-username: root
+---
 
-password: adminroot
+## 🛠️ Technology Stack
 
-2. User:
+- **Backend**: Core PHP (v5.3+)
+- **Database**: MySQL / MySQLi
+- **Frontend**: HTML5, CSS3, JavaScript (jQuery, Bootstrap, FlexSlider)
+- **Email Service**: PHPMailer (with Gmail SMTP configuration)
 
-username: user
+---
 
-password: userpass
+## 🚀 Installation & Setup
 
-### Main Features
+1. **Clone/Copy Project**: Move the repository files to your server directory (e.g. `/var/www/html/online-notes-sharing` or your XAMPP/WAMP `htdocs` folder).
+2. **Database Import**:
+   - Open phpMyAdmin.
+   - Create a database named `notes`.
+   - Import the database dump file [notes.sql](file:///d:/BACKUP/projects/PHP%20project/online-notes-sharing/db/notes.sql).
+3. **Database Configuration**:
+   - Open [connection.php](file:///d:/BACKUP/projects/PHP%20project/online-notes-sharing/includes/connection.php) and update the settings to connect to your database.
+4. **Launch Application**:
+   - Open your browser and navigate to `http://localhost/online-notes-sharing`.
 
-- Multiple user access:  Allows multiple type of users(teacher/student/admin) to login 
-- Functional Admin panel:  Allows admins to manage the whole system
-- CRUD functionalities:  Allows all users to create,read,update and delete their notes in a managed format 
-- Profile update option:  Allows users to update their profile/account details  
-- Secure registration and login option for users
-- Allows students and teachers to download/upload their course notes easily
-- Allows users to recover their password using forgot password option
+---
 
-### To-Do  list
-- Add pagination for notes
-- Add login with facebook and google+ option
-- Add search notes option
+## 🔑 Default Login Credentials
 
-### Issues
+For testing and demonstration, you can use the default accounts:
 
-Please log any issues found in the repository 
+* **Admin Account**:
+  - **Username**: `root`
+  - **Password**: `adminroot`
+* **Student/Teacher Account**:
+  - **Username**: `user`
+  - **Password**: `userpass`
 
-### References 
-www.freshdesignweb.com
-Fashion Responsive Slider
+---
 
-### License
-Online Notes Sharing is released under the MIT License
+## 📝 Roadmap & To-Do List
+
+- [ ] Add note search optimization.
+- [ ] Implement pagination for note tables.
+- [ ] Add social authentication (Google/Facebook login).
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](file:///d:/BACKUP/projects/PHP%20project/online-notes-sharing/LICENSE). Created & maintained by [Vijay Mahes](https://github.com/vijaymahes9080).
